@@ -1,1 +1,13 @@
 
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Noto Sans',sans-serif}
+body{background:#fff8e1;color:#4e342e}
+header{background:linear-gradient(135deg,#ff6f00,#d50000);color:#fff;text-align:center;padding:15px}
+.legal{font-size:0.8rem;color:#ffe082}
+nav{display:flex;overflow-x:auto;background:#ffcc80}
+nav button{flex:1;padding:10px;border:none;background:none;font-weight:bold;white-space:nowrap}
+.tab{display:none;padding:15px}.tab.active{display:block}
+.card{background:#fff;padding:12px;margin:8px 0;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+.alert{background:#ffeb3b;padding:10px;border-radius:8px;margin:10px 0;font-weight:bold}
+.emergency{background:#d50000;color:#fff;padding:15px;width:100%;margin:5px 0;border:none;border-radius:8px}
+select,input{width:100%;padding:10px;margin:10px 0;border-radius:8px;border:1px solid #ccc}
+.note{font-size:0.8rem;color:#777}
