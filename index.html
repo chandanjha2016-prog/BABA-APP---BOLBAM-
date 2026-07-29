@@ -1,1 +1,91 @@
 
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baba App - Bol Bam | Seva App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🔱 Baba App - Bol Bam 🔱</h1>
+    <p>Ghar Se Ghar Tak - Har Kadam Surakshit</p>
+    <p class="legal">*Public Service App. Sarkari App Nahi*</p>
+    <button id="voiceBtn">🔊 Happy Sawan</button>
+    <button id="bhajanBtn">🎵 Baba Bhajan</button>
+  </header>
+
+  <nav>
+    <button onclick="showTab('map')">🗺️ Route</button>
+    <button onclick="showTab('panda')">📿 Panda</button>
+    <button onclick="showTab('stay')">🏠 Hotel/Dharamshala</button>
+    <button onclick="showTab('gadi')">🚕 Gaadi</button>
+    <button onclick="showTab('shops')">🏪 Dukaan</button>
+    <button onclick="showTab('help')">🆘 Help</button>
+  </nav>
+
+  <!-- PANDA LIST - DISTRICT WISE + HOME ADDRESS -->
+  <section id="panda" class="tab active">
+    <h2>Panda Ji ki List - District Wise</h2>
+    <select id="districtSelect" onchange="loadPanda()">
+      <option value="">Apna District Chunein</option>
+      <option value="patna">Patna</option>
+      <option value="ranchi">Ranchi</option>
+      <option value="deoghar">Deoghar</option>
+      <option value="jamalpur">Jamalpur</option>
+    </select>
+    <div id="pandaList"></div>
+    <p class="note">*Fee sarkar dwara nishchit nahi. Khud baat kar lein*</p>
+  </section>
+
+  <!-- HOTEL + DHARAMSHALA + CAR + AUTO + E-RICKSHAW -->
+  <section id="stay" class="tab">
+    <h2>Rahne ka Intezam</h2>
+    <h3>🏠 Dharamshala</h3><div id="dharamshalaList"></div>
+    <h3>🏨 Hotel</h3><div id="hotelList"></div>
+  </section>
+
+  <section id="gadi" class="tab">
+    <h2>Gaadi Booking</h2>
+    <h3>🚕 Car/Taxi</h3><div id="carList"></div>
+    <h3>🛺 Auto / E-Rickshaw</h3><div id="autoList"></div>
+    <p><b>Baba ke baad Basukinath:</b> Bus ₹80, Taxi ₹1500</p>
+  </section>
+
+  <!-- SHOPS + COMPLAINT -->
+  <section id="shops" class="tab">
+    <h2>Dukaan List</h2>
+    <div class="alert">⚠️ Pocketmaar se Savdhaan! Bill lein. Samman ki Suraksha Swayam Karein</div>
+    <input type="text" id="shopSearch" placeholder="Jagah: Mandal House">
+    <div id="shopList"></div>
+    <button onclick="openComplaint()">📢 Thagi ki Anonymous Shikayat</button>
+  </section>
+
+  <!-- HELP: DR + POLICE + FIRE -->
+  <section id="help" class="tab">
+    <h2>Emergency Help</h2>
+    <button class="emergency" onclick="call('112')">Police - 112</button>
+    <button class="emergency" onclick="call('108')">Ambulance - 108</button>
+    <button class="emergency" onclick="call('101')">Fire - 101</button>
+    
+    <h3>👨‍⚕️ Dr Camp</h3><div id="drList"></div>
+    <h3>👮 Police Shivir</h3><div id="policeList"></div>
+    <h3>🚒 Fire Shivir</h3><div id="fireList"></div>
+    
+    <button onclick="reportMissing()">❗ Missing Person - Govt Info</button>
+  </section>
+
+  <!-- ROUTE -->
+  <section id="map" class="tab">
+    <h2>Route + Line Status</h2>
+    <p><b>Line:</b> <span id="lineStatus">Normal</span></p>
+    <p><b>Pass:</b> Deoghar ₹250 Gate 4, Basukinath ₹100</p>
+  </section>
+
+  <footer>
+    <p>🕉️ Om Namah Shivaya | Har Har Mahadev</p>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>
